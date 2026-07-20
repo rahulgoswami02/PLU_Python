@@ -1,0 +1,23 @@
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    DepartmentID INT,
+);
+
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+INSERT INTO Employee (EmployeeID, Name, DepartmentID) VALUES
+(1, 'Rahul', 101),
+(2, 'Priya', 102),
+(3, 'Aman', 101);
+
+INSERT INTO Department (DepartmentID, DepartmentName) VALUES
+(101, 'IT'),
+(102, 'HR');
+
+SELECT Employee.Name, Department.DepartmentName FROM Employee
+INNER JOIN Department
+ON Employee.DepartmentID = Department.DepartmentID;
